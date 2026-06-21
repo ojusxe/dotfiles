@@ -1,0 +1,27 @@
+[user]
+    name = ojus
+    email = guptaojas75@gmail.com
+
+[includeIf "gitdir:~/Projects/"]
+    path = ~/.gitconfig-personal
+
+[includeIf "gitdir:~/Projects/**"]
+    path = ~/.gitconfig-personal
+
+[includeIf "gitdir:~/Otel/"]
+    path = ~/.gitconfig-work
+
+[includeIf "gitdir:~/Otel/**"]
+    path = ~/.gitconfig-work
+
+[credential]
+    helper = osxkeychain
+
+[pager]
+    branch = false
+
+[filter "lfs"]
+    clean = git-lfs clean -- %f
+    smudge = git-lfs smudge -- %f
+    process = git-lfs filter-process
+    required = true
